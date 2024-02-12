@@ -28,7 +28,7 @@ app.use((req, res, next) => {
     next();
 });
 app.use(bodyParser.json());
-app.get('/',(req,res) => {
+app.get('/code',(req,res) => {
     res.send("got my get request").status(200)
 })
 app.post('/code', async (req, res) => {
