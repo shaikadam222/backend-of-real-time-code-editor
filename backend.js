@@ -31,7 +31,7 @@ app.use(bodyParser.json());
 app.get('/code',(req,res) => {
     res.send("got my get request").status(200)
 })
-app.post('/code', async (req, res) => {
+app.post('/', async (req, res) => {
   var fileName = generateRandomString(12);
   console.log(fileName)
   await fs.writeFile(`./outputs/${fileName}.cpp`, req.body.code, (err) => {
