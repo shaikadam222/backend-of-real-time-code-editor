@@ -28,6 +28,9 @@ app.use((req, res, next) => {
     next();
 });
 app.use(bodyParser.json());
+app.get('/',(req,res) => {
+    res.send("got my get request").status(200)
+})
 app.post('/code', async (req, res) => {
   var fileName = generateRandomString(12);
   console.log(fileName)
