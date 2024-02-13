@@ -28,7 +28,7 @@ app.use((req, res, next) => {
     next();
 });
 app.use(bodyParser.json());
-app.get('/code',(req,res) => {
+app.get('/',(req,res) => {
     res.send("got my get request").status(200)
 })
 app.post('/', async (req, res) => {
@@ -68,7 +68,9 @@ app.post('/', async (req, res) => {
           });
 
           runProcess.on('close', () => {
-              res.send({ stdout: output, stderr: errorOutput });
+            const ret = { stdout: output, stderr: errorOutput };
+              res.send(ret);
+            //   res.send({ stdout: output, stderr: errorOutput });
           });
       }
   });
